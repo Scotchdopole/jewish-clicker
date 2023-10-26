@@ -1,0 +1,80 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+  font-family: 'VT323', monospace;
+  user-select: none;
+  transition: .3s ease-in-out;
+}
+
+body,html {
+  background: rgb(18,15,26);
+  background-image: url("../img/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+#wrapper {
+  display: block;
+  margin-top: 200px;
+  text-align: center;
+  max-width: fit-content;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.308);
+  
+  
+}
+
+#cookie {
+  max-width: 230px;
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  border-radius: 25px;
+  margin-top: 0px;
+user-select: none;
+}
+
+#cookie:hover {
+  transform: scale(1.2);
+  transition: .3s ease-in-out;
+}
+
+#counter {
+  font-size: 42px;
+  text-align: center;
+  color: white;
+  transition: .2s ease;
+  cursor: pointer;
+  margin-top: 100px;
+}
+
+#counter:hover {
+  transform: scale(1.1);
+}
+
+.button{
+  width: 200px;
+  background-color: white;
+  color: black;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 20px;
+  border: none;
+}
+
+.button:hover{
+  background-color: black;
+  color: white;
+}
