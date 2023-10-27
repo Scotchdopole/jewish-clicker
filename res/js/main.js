@@ -7,7 +7,7 @@ const autoclickUpgrade = document.getElementById("autoclickUpgrade");
 let numberOfCookies = 0;
 let cookieIncrease = 1;
 let upgradePrice = 150;
-let autoclickUpgradePrice = 0;
+let autoclickUpgradePrice = 400;
 let clicksPerSecond = 0;
 let autoclickCookieIncrease = 0;
 let autoclickInterval;
@@ -34,12 +34,12 @@ upgrade.onclick = () => {
   if (numberOfCookies >= upgradePrice){
     cookieIncrease ++;
     numberOfCookies -= upgradePrice;
-    upgradePrice *= 2;
+    upgradePrice *= 1.4;
 
   }
 
   counter.innerText = "penízků: " + numberOfCookies;
-  upgrade.innerText = "upgrade: " + upgradePrice;
+  upgrade.innerText = "upgrade: " + Math.round(upgradePrice);
 
   upgrade.style.transform = "scale(0.9)"
   setTimeout(function() {
@@ -51,9 +51,11 @@ upgrade.onclick = () => {
 
 autoclickUpgrade.onclick = () => {
 
-  if(numberOfCookies >= 100){
-    numberOfCookies -= 100;
+  if(numberOfCookies >= autoclickUpgradePrice){
+    numberOfCookies -= autoclickUpgradePrice;
+    autoclickUpgradePrice *= 1.2;
     counter.innerText = "penízků: " + numberOfCookies;
+    autoclickUpgrade.innerText = "autoclicker: " + Math.round(autoclickUpgradePrice);
     autoclickCookieIncrease++;
     clearInterval(autoclickInterval);
 
