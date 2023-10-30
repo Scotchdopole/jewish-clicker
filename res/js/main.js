@@ -23,7 +23,7 @@ cookie.onclick = () => {
     
     cookie.style.borderRadius = "40px";
     setTimeout(function() {
-        cookie.style.transform = "scale(1.2)";
+        cookie.style.transform = "scale(1)";
         cookie.style.borderRadius = "25px";
         
       }, 80);

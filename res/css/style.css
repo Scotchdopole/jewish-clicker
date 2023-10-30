@@ -49,7 +49,7 @@ body,html {
 
 
 #cookie {
-  max-width: 230px;
+  max-width: 340px;
   width: 100%;
   display: table;
   margin: 0 auto;
@@ -65,13 +65,14 @@ user-select: none;
   transition: .3s ease-in-out;
 }
 
+
 #counter {
   font-size: 42px;
   text-align: center;
   color: white;
   transition: .2s ease;
   cursor: pointer;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 #counter:hover {
