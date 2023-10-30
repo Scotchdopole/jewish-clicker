@@ -12,17 +12,21 @@ body,html {
   background: rgb(18,15,26);
   background-image: url("../img/background.png");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   height: 100%;
   padding: 0;
   margin: 0;
   overflow: hidden;
   text-align: center;
+  
+  
+ 
 }
 
-#wrapper {
-  display: block;
-  margin-top: 200px;
+#container {
+  position: relative;
+  bottom: 100px;
   text-align: center;
   max-width: fit-content;
   padding: 20px;
@@ -33,6 +37,16 @@ body,html {
   
   
 }
+
+.wrapper{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 #cookie {
   max-width: 230px;
