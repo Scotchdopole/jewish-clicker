@@ -2,6 +2,10 @@ const cookie = document.getElementById("cookie");
 const counter = document.getElementById("counter");
 const upgrade = document.getElementById("upgrade");
 const autoclickUpgrade = document.getElementById("autoclickUpgrade");
+const gambaButton = document.getElementById("gambaButton");
+const cpsDisplay = document.getElementById("cpsDisplay");
+const cpcDisplay = document.getElementById("cpcDisplay");
+const gambaDisplay = document.getElementById("gambaDisplay");
 
 
 let numberOfCookies = 0;
@@ -9,9 +13,11 @@ let numberOfCookies = 0;
 let cookieIncrease = 1;
 let upgradePrice = 150;
 
-let autoclickUpgradePrice = 400;
+let autoclickUpgradePrice = 300;
 let autoclickCookieIncrease = 0;
 let autoclickInterval;
+
+
 
 
 cookie.onclick = () => {
@@ -33,20 +39,17 @@ cookie.onclick = () => {
 upgrade.onclick = () => {
   
   if (numberOfCookies >= upgradePrice){
-    cookieIncrease ++;
+    cookieIncrease += 1;
     numberOfCookies -= upgradePrice;
-    upgradePrice *= 1.4;
+    upgradePrice *= 1.2;
 
   }
 
   counter.innerText = "penízků: " + Math.round(numberOfCookies);
-  upgrade.innerText = "upgrade: " + Math.round(upgradePrice);
-
-  upgrade.style.transform = "scale(0.9)"
-  setTimeout(function() {
-
-    upgrade.style.transform = "scale(1)"
-  }, 100);
+  upgrade.innerText = "magnet na penízky: " + Math.round(upgradePrice);
+  cpcDisplay.innerText = "penízků za kliknutí: " + Math.round(cookieIncrease);
+  
+  
 }
 
 
@@ -56,20 +59,79 @@ autoclickUpgrade.onclick = () => {
     numberOfCookies -= autoclickUpgradePrice;
     autoclickUpgradePrice *= 1.2;
     counter.innerText = "penízků: " + Math.round(numberOfCookies);
-    autoclickUpgrade.innerText = "autoclicker: " + Math.round(autoclickUpgradePrice);
+    autoclickUpgrade.innerText = "otrocký žid: " + Math.round(autoclickUpgradePrice);
     autoclickCookieIncrease++;
+    cpsDisplay.innerText = "penízků za sekundu: " + Math.round(autoclickCookieIncrease);
     clearInterval(autoclickInterval);
 
     autoclickInterval = setInterval(() =>{
       numberOfCookies += autoclickCookieIncrease; 
       counter.innerText = "penízků: " + Math.round(numberOfCookies);
-    }, 500);
+      
+    }, 1000);
   }
-  autoclickUpgrade.style.transform = "scale(0.9)"
-  setTimeout(function() {
-
-    autoclickUpgrade.style.transform = "scale(1)"
-  }, 100);
   
+}
+
+gambaButton.onclick = () => {
+  
+  if (numberOfCookies >= 1000){
+    numberOfCookies -= 1000
+    let gambaNumber = Math.floor(Math.random() * 6);
+    console.log(gambaNumber);
+  if (gambaNumber == 0){
+    
+
+      if (cookieIncrease <= 10){
+        cookieIncrease = 1;
+      }else if (cookieIncrease > 10){
+        cookieIncrease -= 10;
+      }
+      
+      cpcDisplay.innerText = "penízků za kliknutí: " + Math.round(cookieIncrease);
+      gambaDisplay.innerText = ("gg penízky za \n kliknutí -10")
+    }
+
+    else if (gambaNumber == 1){
+
+      cookieIncrease += 10;
+      cpcDisplay.innerText = "penízků za kliknutí: " + Math.round(cookieIncrease);
+      gambaDisplay.innerText = "penízky za \n kliknutí +10"
+
+    }else if (gambaNumber == 2){
+
+      autoclickCookieIncrease += 7;
+      cpsDisplay.innerText = "penízků za sekundu: " + Math.round(autoclickCookieIncrease);
+      gambaDisplay.innerText = "penízky za \n sekundu +7"
+
+    }else if (gambaNumber == 3){
+
+      if (autoclickCookieIncrease <= 7){
+        autoclickCookieIncrease = 1;
+      }else if (autoclickCookieIncrease > 7){
+        autoclickCookieIncrease -= 7;
+      }
+
+      
+      cpsDisplay.innerText = "penízků za sekundu: " + Math.round(autoclickCookieIncrease);
+      gambaDisplay.innerText = "gg penízky za \n sekundu -7"
+
+    }else if (gambaNumber == 4){
+
+      numberOfCookies -= 4000;
+      gambaDisplay.innerText = "gg penízky \n -4000"
+      counter.innerText = "penízků: " + Math.round(numberOfCookies);
+
+    }else if (gambaNumber == 5){
+
+      numberOfCookies += 5000;
+      gambaDisplay.innerText = "penízky +5000"
+      counter.innerText = "penízků: " + Math.round(numberOfCookies);
+
+    }
+    
+  }
+
+
 }
 

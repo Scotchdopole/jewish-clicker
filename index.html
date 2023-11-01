@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jewish clicker</title>
-    <link rel="stylesheet" href="./res/css/style.css" />
-    <link rel="shortcut icon" href="./res/img/cookie.gif" type="image/x-icon">
 
-  </head>
-  <body>
-    
-    <span style="color: white; font-size: 60px; -webkit-text-stroke: 1.5px black;">Jewish clicker</span>
-    <div class="wrapper">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jewish clicker</title>
+  <link rel="stylesheet" href="./res/css/style.css" />
+  <link rel="shortcut icon" href="./res/img/cookie.gif" type="image/x-icon" />
+</head>
+
+<body>
+  <span style="color: white; font-size: 60px; -webkit-text-stroke: 1.5px black">Jewish clicker</span>
+  <div class="wrapper">
     <div id="container">
-      
       <img id="cookie" draggable="false" (dragstart)="false;" src="./res/img/cookie.png" alt="Cookie" />
-      <p id="counter">penízků: 0</p>
-  
-      <button class="button" id="upgrade">upgrade: 150</button>
-      <button class="button" id="autoclickUpgrade">autoclicker: 400</button>
-   
+      <span id="counter">penízků: 0</span>
+      <div class="upgrades-container">
+        <div style="display: flex; flex-direction: column">
+          <button class="button" id="upgrade">magnet na penízky: 150</button>
+          <span style="color: white; font-size: 20px;" id="cpcDisplay">penízků za kliknutí: 1</span>
+        </div>
+        <div style="display: flex; flex-direction: column">
+          <button class="button" id="autoclickUpgrade">
+            otrocký žid: 300
+          </button>
+          <span style="color: white; font-size: 20px;" id="cpsDisplay">penízků za sekundu: 0</span>
+        </div>
+      </div>
+      <div class="gamba-container">
+        <h2 style="color: white; -webkit-text-stroke: none; font-size: 35px">
+          powerup gamba:
+        </h2>
+        <div style="display: flex; flex-direction: row; gap: 30px">
+        <button class="button" id="gambaButton">gamba: 1000</button>
+        <div style="display: flex; align-items: center;">
+        <span id="gambaDisplay" style="color: white; font-size: 30px;"></span>
+      </div>
+      </div>
+      </div>
     </div>
   </div>
-    <script src="./res/js/main.js"></script>
-  </body>
+  <script src="./res/js/main.js"></script>
+</body>
+
 </html>
