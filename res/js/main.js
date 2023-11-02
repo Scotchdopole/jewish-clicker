@@ -11,7 +11,7 @@ const gambaDisplay = document.getElementById("gambaDisplay");
 let numberOfCookies = 0;
 
 let cookieIncrease = 1;
-let upgradePrice = 150;
+let upgradePrice = 50;
 
 let autoclickUpgradePrice = 300;
 let autoclickCookieIncrease = 0;
@@ -41,7 +41,7 @@ upgrade.onclick = () => {
   if (numberOfCookies >= upgradePrice){
     cookieIncrease += 1;
     numberOfCookies -= upgradePrice;
-    upgradePrice *= 1.2;
+    upgradePrice *= 1.1;
 
   }
 
@@ -57,7 +57,7 @@ autoclickUpgrade.onclick = () => {
 
   if(numberOfCookies >= autoclickUpgradePrice){
     numberOfCookies -= autoclickUpgradePrice;
-    autoclickUpgradePrice *= 1.2;
+    autoclickUpgradePrice *= 1.1;
     counter.innerText = "penízků: " + Math.round(numberOfCookies);
     autoclickUpgrade.innerText = "otrocký žid: " + Math.round(autoclickUpgradePrice);
     autoclickCookieIncrease++;
@@ -90,6 +90,7 @@ gambaButton.onclick = () => {
       
       cpcDisplay.innerText = "penízků za kliknutí: " + Math.round(cookieIncrease);
       gambaDisplay.innerText = ("gg penízky za \n kliknutí -10")
+      counter.innerText = "penízků: " + Math.round(numberOfCookies);
     }
 
     else if (gambaNumber == 1){
@@ -97,12 +98,14 @@ gambaButton.onclick = () => {
       cookieIncrease += 10;
       cpcDisplay.innerText = "penízků za kliknutí: " + Math.round(cookieIncrease);
       gambaDisplay.innerText = "penízky za \n kliknutí +10"
+      counter.innerText = "penízků: " + Math.round(numberOfCookies);
 
     }else if (gambaNumber == 2){
 
       autoclickCookieIncrease += 7;
       cpsDisplay.innerText = "penízků za sekundu: " + Math.round(autoclickCookieIncrease);
       gambaDisplay.innerText = "penízky za \n sekundu +7"
+      counter.innerText = "penízků: " + Math.round(numberOfCookies);
 
     }else if (gambaNumber == 3){
 
@@ -115,6 +118,7 @@ gambaButton.onclick = () => {
       
       cpsDisplay.innerText = "penízků za sekundu: " + Math.round(autoclickCookieIncrease);
       gambaDisplay.innerText = "gg penízky za \n sekundu -7"
+      counter.innerText = "penízků: " + Math.round(numberOfCookies);
 
     }else if (gambaNumber == 4){
 
