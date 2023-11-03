@@ -55,7 +55,6 @@ body,html {
   width: 100%;
   display: table;
   margin: 0 auto;
-  cursor: pointer;
   transition: .3s ease-in-out;
   border-radius: 25px;
   margin-top: 0px;
@@ -71,9 +70,8 @@ user-select: none;
 #counter {
   font-size: 42px;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
   transition: .2s ease;
-  cursor: pointer;
   margin-top: 50px;
 }
 
